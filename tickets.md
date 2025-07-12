@@ -224,3 +224,11 @@
 - [x] Reviewed
 - [x] Documented
 - Implement a helper that copies the contents of the `workflows` directory into a specified destination so packaged applications include the templates.
+
+## Ticket 28 - Code Cleanup
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Address flake8 warnings, remove unused imports, and tidy files.

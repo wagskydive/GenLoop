@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 
+
 __all__ = ["GenLoopInputNode"]
+
 
 @dataclass
 class GenLoopInputNode:

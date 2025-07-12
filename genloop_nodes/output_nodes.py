@@ -13,6 +13,7 @@ __all__ = [
     "GenLoopOutputEnvironmentNode",
 ]
 
+
 @dataclass
 class GenLoopOutputNode:
     """Base class for GenLoop output nodes."""

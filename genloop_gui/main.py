@@ -131,6 +131,7 @@ class CharacterTab(QWidget):
         self.memory.save()
         super().closeEvent(event)
 
+
 class MainWindow(QMainWindow):
     """Main window with tab widget."""
 
@@ -150,11 +151,13 @@ class MainWindow(QMainWindow):
         for name, widget in tab_defs:
             self.tabs.addTab(widget, name)
 
+
 def main():
     app = QApplication.instance() or QApplication([])
     win = MainWindow()
     win.show()
     app.exec()
+
 
 if __name__ == "__main__":
     main()
