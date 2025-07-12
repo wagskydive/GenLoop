@@ -33,8 +33,8 @@ GenLoop will be developed in the following milestones derived from the design do
 - [x] Default character workflow
 - [x] Default item workflow
 - [x] Default environment workflow
-- [ ] Include GenLoop nodes in templates
-- [ ] Publish under `/workflows`
+- [x] Include GenLoop nodes in templates
+- [x] Publish under `/workflows`
 
 ## Milestone 6: Asset Metadata and Style Management
 - [ ] Style sheet collection

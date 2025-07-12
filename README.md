@@ -39,3 +39,6 @@ To launch the GUI run:
 ```bash
 python -m genloop_gui
 ```
+
+Within the **Characters** tab you can manage character slots by adding or
+removing editable slot names. See [docs/gui.md](docs/gui.md) for details.
