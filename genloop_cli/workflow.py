@@ -61,7 +61,9 @@ def validate_workflow(data: dict) -> None:
     """Validate presence of required GenLoop nodes."""
     nodes = data.get("nodes", [])
     has_input = any(n.get("type") == "GenLoopInputNode" for n in nodes)
-    has_output = any(str(n.get("type", "")).startswith("GenLoopOutput") for n in nodes)
+    has_output = any(
+        str(n.get("type", "")).startswith("GenLoopOutput") for n in nodes
+    )
     if not (has_input and has_output):
         raise click.ClickException("Invalid workflow: missing GenLoop nodes")
 
@@ -71,7 +73,9 @@ def parse_overrides(values: tuple[str]) -> dict:
     overrides: dict[str, str] = {}
     for item in values:
         if '=' not in item:
-            raise click.ClickException(f"Invalid override '{item}' (expected key=value)")
+            raise click.ClickException(
+                f"Invalid override '{item}' (expected key=value)"
+            )
         key, value = item.split('=', 1)
         overrides[key] = value
     return overrides

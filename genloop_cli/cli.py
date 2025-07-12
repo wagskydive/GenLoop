@@ -10,10 +10,12 @@ from .workflow import (
 )
 from .packaging import run_pyinstaller, bundle_workflows
 
+
 @click.group()
 def cli():
     """GenLoop command line interface."""
     pass
+
 
 @cli.command()
 def version():
@@ -29,7 +31,11 @@ def generate():
 
 @generate.command()
 @click.option("--workflow", type=click.Path(), help="Workflow JSON file")
-@click.option("--override", multiple=True, help="Override node value key=value")
+@click.option(
+    "--override",
+    multiple=True,
+    help="Override node key=value",
+)
 @click.option("--debug", is_flag=True, help="Show debug information")
 def characters(workflow, override, debug):
     """Generate character assets."""
@@ -46,7 +52,11 @@ def characters(workflow, override, debug):
 
 @generate.command()
 @click.option("--workflow", type=click.Path(), help="Workflow JSON file")
-@click.option("--override", multiple=True, help="Override node value key=value")
+@click.option(
+    "--override",
+    multiple=True,
+    help="Override node key=value",
+)
 @click.option("--debug", is_flag=True, help="Show debug information")
 def items(workflow, override, debug):
     """Generate item assets."""
@@ -63,7 +73,11 @@ def items(workflow, override, debug):
 
 @generate.command()
 @click.option("--workflow", type=click.Path(), help="Workflow JSON file")
-@click.option("--override", multiple=True, help="Override node value key=value")
+@click.option(
+    "--override",
+    multiple=True,
+    help="Override node key=value",
+)
 @click.option("--debug", is_flag=True, help="Show debug information")
 def environments(workflow, override, debug):
     """Generate environment assets."""
@@ -91,6 +105,7 @@ def package(target: str, dist: str) -> None:
         name = "genloop-gui"
     run_pyinstaller(entry, name, dist)
     bundle_workflows(dist)
+
 
 if __name__ == "__main__":
     cli()

@@ -167,3 +167,9 @@ Started Ticket 27 - Bundle Workflows
 Marked Ticket 27 as started in tickets.md
 Marked Milestone 7 packaging tasks as done
 Implemented packaging features and updated tickets 25-27
+## Sat Jul 12 19:38:21 UTC 2025
+Started Ticket 28 - Code Cleanup
+Marked Ticket 28 as started in tickets.md
+Ran flake8 and fixed style issues in CLI, nodes and GUI.
+Removed unused imports and ensured tests pass.
+Marked Ticket 28 coded, tested, documented

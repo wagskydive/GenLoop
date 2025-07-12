@@ -1,6 +1,8 @@
 import re
 
+
 __all__ = ["slugify", "safe_path"]
+
 
 def slugify(value: str) -> str:
     """Return a filesystem-safe slug."""

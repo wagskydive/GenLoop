@@ -5,7 +5,6 @@ import subprocess
 from pathlib import Path
 import shutil
 import click
-from typing import Sequence
 
 __all__ = ["run_pyinstaller", "bundle_workflows"]
 

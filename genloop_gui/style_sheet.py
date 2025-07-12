@@ -5,7 +5,13 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass, field
 from typing import List
-from PySide6.QtWidgets import QWidget, QListWidget, QPushButton, QVBoxLayout, QListWidgetItem
+from PySide6.QtWidgets import (
+    QWidget,
+    QListWidget,
+    QPushButton,
+    QVBoxLayout,
+    QListWidgetItem,
+)
 from PySide6.QtCore import Qt
 
 
@@ -75,7 +81,9 @@ class StyleSheetTab(QWidget):
             self.list.takeItem(self.list.row(item))
 
     def closeEvent(self, event) -> None:  # type: ignore[override]
-        self.sheet.styles = [self.list.item(i).text() for i in range(self.list.count())]
+        self.sheet.styles = [
+            self.list.item(i).text()
+            for i in range(self.list.count())
+        ]
         self.sheet.save()
         super().closeEvent(event)
-

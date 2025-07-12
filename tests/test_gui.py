@@ -1,5 +1,3 @@
-import os
-import sys
 import subprocess
 from genloop_gui import MainWindow
 from genloop_gui.main import ResultsWidget, CharacterTab
