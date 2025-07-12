@@ -15,6 +15,7 @@ This repository is organised as a monorepo containing packages for the CLI, GUI,
 
 See [docs/nodes.md](docs/nodes.md) for details on node utilities such as
 `GenLoopInputNode` and the output node classes that save generated assets.
+For details on the optional graphical interface see [docs/gui.md](docs/gui.md).
 
 ## Installation
 
@@ -32,3 +33,9 @@ python -m genloop_cli generate characters --workflow wf.json --debug
 ```
 Supplying a workflow will run ComfyUI. Set ``GENLOOP_COMFYUI_CMD`` to override
 the command if ComfyUI is installed elsewhere or for testing purposes.
+
+To launch the GUI run:
+
+```bash
+python -m genloop_gui
+```

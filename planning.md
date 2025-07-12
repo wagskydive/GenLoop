@@ -24,7 +24,7 @@ GenLoop will be developed in the following milestones derived from the design do
 - [x] Utility functions (slugifier, safe paths)
 
 ## Milestone 4: GUI Application
-- [ ] Tabs for Characters, Items, Environments, Brainstorm and Style Sheet
+- [x] Tabs for Characters, Items, Environments, Brainstorm and Style Sheet
 - [ ] Results view
 - [ ] Character slot management
 - [ ] GUI to CLI bridge with progress feedback
