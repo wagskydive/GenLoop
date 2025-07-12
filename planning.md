@@ -42,7 +42,7 @@ GenLoop will be developed in the following milestones derived from the design do
 - [x] Asset logs in JSON
 
 ## Milestone 7: Packaging
-- [ ] PyInstaller build for CLI
-- [ ] GUI desktop packaging
-- [ ] Bundle default workflows and templates
+- [x] PyInstaller build for CLI
+- [x] GUI desktop packaging
+- [x] Bundle default workflows and templates
 

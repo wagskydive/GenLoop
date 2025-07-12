@@ -47,3 +47,7 @@ in ``slots.json``. Use the **Generate** button to run the CLI. See
 [docs/gui.md](docs/gui.md) for details. The **Style Sheet** tab manages style
 tags stored in ``styles.json``. Output nodes also append metadata entries to
 ``asset_log.json``.
+
+## Packaging
+
+See [docs/packaging.md](docs/packaging.md) for instructions on building standalone executables using PyInstaller. A `package` CLI command is available to build both the CLI and GUI applications.

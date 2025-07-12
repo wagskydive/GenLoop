@@ -193,8 +193,6 @@
 - [x] Tested
 - [x] Reviewed
 - [x] Documented
-- Implement persistent slot memory storing style tags for locked character slots. Integrate with the GUI Character tab.
-
 ## Ticket 24 - Asset Logger
 - [x] Started
 - [x] Coded
@@ -202,3 +200,27 @@
 - [x] Reviewed
 - [x] Documented
 - Create an `AssetLogger` to append metadata to `asset_log.json` whenever an output node saves an asset.
+
+## Ticket 25 - CLI Packaging
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Implement a `package` command in the CLI that uses PyInstaller to build a standalone executable. The command should allow overriding the PyInstaller command via the `GENLOOP_PYINSTALLER_CMD` environment variable and bundle the default workflows into the output directory.
+
+## Ticket 26 - GUI Packaging
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Extend the `package` command to support packaging the GUI application using PyInstaller with the same environment variable override.
+
+## Ticket 27 - Bundle Workflows
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Implement a helper that copies the contents of the `workflows` directory into a specified destination so packaged applications include the templates.
