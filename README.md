@@ -23,4 +23,6 @@ For details on the command line interface, read [docs/cli.md](docs/cli.md). You 
 python -m genloop_cli generate characters [--workflow path/to/workflow.json]
 python -m genloop_cli generate items [--workflow path/to/workflow.json]
 python -m genloop_cli generate environments [--workflow path/to/workflow.json]
+python -m genloop_cli generate characters --workflow wf.json \
+    --override prompt="A hero" --override style=anime
 ```

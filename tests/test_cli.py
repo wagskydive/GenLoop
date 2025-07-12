@@ -49,3 +49,37 @@ def test_generate_characters_invalid_workflow(tmp_path):
     result = subprocess.run([sys.executable, '-m', 'genloop_cli', 'generate', 'characters', '--workflow', str(wf)], capture_output=True, text=True)
     assert result.returncode != 0
     assert 'Invalid workflow' in result.stderr
+
+
+def test_generate_characters_with_override(tmp_path):
+    wf = _create_workflow(tmp_path, valid=True)
+    result = subprocess.run([
+        sys.executable,
+        '-m',
+        'genloop_cli',
+        'generate',
+        'characters',
+        '--workflow',
+        str(wf),
+        '--override',
+        'foo=bar',
+    ], capture_output=True, text=True)
+    assert result.returncode == 0
+    assert "Applied overrides: {'foo': 'bar'}" in result.stdout
+
+
+def test_generate_characters_invalid_override(tmp_path):
+    wf = _create_workflow(tmp_path, valid=True)
+    result = subprocess.run([
+        sys.executable,
+        '-m',
+        'genloop_cli',
+        'generate',
+        'characters',
+        '--workflow',
+        str(wf),
+        '--override',
+        'bad',
+    ], capture_output=True, text=True)
+    assert result.returncode != 0
+    assert 'Invalid override' in result.stderr

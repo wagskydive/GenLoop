@@ -11,9 +11,9 @@ GenLoop will be developed in the following milestones derived from the design do
 - [x] `generate characters` command
 - [x] `generate items` command
 - [x] `generate environments` command
-- [ ] Workflow loading from `.json`
-- [ ] GenLoop node validation
-- [ ] CLI argument overrides
+ - [x] Workflow loading from `.json`
+ - [x] GenLoop node validation
+ - [x] CLI argument overrides
 - [ ] Run ComfyUI and watch for output
 - [ ] Debug and override flags
 

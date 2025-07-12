@@ -24,5 +24,13 @@ To trigger environment generation:
 python -m genloop_cli generate environments [--workflow path/to/workflow.json]
 ```
 
+Overrides can be supplied with `--override key=value`. Multiple overrides are
+allowed and will update the loaded workflow data:
+
+```bash
+python -m genloop_cli generate characters --workflow wf.json \
+    --override prompt="A hero" --override style=anime
+```
+
 Future commands will include full asset generation functionality as described in `design.md`.
 The `--workflow` option allows you to load a ComfyUI workflow JSON file.
