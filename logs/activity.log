@@ -58,3 +58,24 @@ Marked Ticket 9 as started in tickets.md
 Implemented ComfyUI execution stub
 Added tests and docs for ComfyUI stub
 Reviewed Ticket 9
+## $(date -u)
+Started Ticket 10 - Run ComfyUI Execution
+Marked Ticket 10 as started in tickets.md
+Marked Ticket 10 as started in planning.md
+Implemented ComfyUI execution with subprocess and env var override
+Added env var docs and updated CLI README
+Updated tests for new execution behaviour
+Marked planning milestone for running ComfyUI as done
+Marked Ticket 10 coded, tested, documented
+## $(date -u)
+Started Ticket 11 - Slugifier Utility
+Marked Ticket 11 as started in tickets.md
+Implemented slugify utility and tests
+Added nodes utility docs and updated README
+Marked Ticket 11 coded, tested, documented
+## $(date -u)
+Started Ticket 12 - GenLoopInputNode Skeleton
+Marked Ticket 12 as started in tickets.md
+Implemented GenLoopInputNode skeleton with prepare method
+Added tests and documentation for GenLoopInputNode
+Marked Ticket 12 coded, tested, documented

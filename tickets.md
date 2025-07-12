@@ -80,3 +80,28 @@
 - [x] Documented
 - Implement a placeholder function to invoke ComfyUI using a workflow path. For now it should just print the command that would be run.
 
+
+## Ticket 10 - Run ComfyUI Execution
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Replace the placeholder ComfyUI function with actual subprocess execution. Stream output and allow overriding the command via the `GENLOOP_COMFYUI_CMD` environment variable.
+
+## Ticket 11 - Slugifier Utility
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Add a `slugify` helper in `genloop_nodes.utils` to create filesystem-safe slugs.
+
+## Ticket 12 - GenLoopInputNode Skeleton
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Implement a minimal `GenLoopInputNode` with prompt formatting and metadata output.
+

@@ -34,7 +34,10 @@ python -m genloop_cli generate characters --workflow wf.json \
 
 Future commands will include full asset generation functionality as described in `design.md`.
 The `--workflow` option allows you to load a ComfyUI workflow JSON file.
-When a workflow is provided, GenLoop will launch ComfyUI to execute it (currently this is a stub that prints the command).
+When a workflow is provided, GenLoop will launch ComfyUI to execute it. The
+``GENLOOP_COMFYUI_CMD`` environment variable can be used to override the command
+that is run. This is useful for testing or if ComfyUI is installed in a custom
+location.
 
 For troubleshooting you can pass `--debug` to print the loaded workflow and any applied overrides:
 

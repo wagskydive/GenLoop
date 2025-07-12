@@ -14,7 +14,7 @@ GenLoop will be developed in the following milestones derived from the design do
  - [x] Workflow loading from `.json`
  - [x] GenLoop node validation
  - [x] CLI argument overrides
-- [ ] Run ComfyUI and watch for output
+- [x] Run ComfyUI and watch for output
  - [x] Debug and override flags
 
 ## Milestone 3: Custom Nodes

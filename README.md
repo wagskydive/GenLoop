@@ -13,6 +13,8 @@ This repository is organised as a monorepo containing packages for the CLI, GUI,
 - `docs/` – documentation
 - `tests/` – unit tests
 
+See [docs/nodes.md](docs/nodes.md) for details on node utilities.
+
 ## Installation
 
 See [docs/installation.md](docs/installation.md) for setup instructions.
@@ -27,4 +29,5 @@ python -m genloop_cli generate characters --workflow wf.json \
     --override prompt="A hero" --override style=anime
 python -m genloop_cli generate characters --workflow wf.json --debug
 ```
-Supplying a workflow will run ComfyUI (currently just echoed to the console).
+Supplying a workflow will run ComfyUI. Set ``GENLOOP_COMFYUI_CMD`` to override
+the command if ComfyUI is installed elsewhere or for testing purposes.
