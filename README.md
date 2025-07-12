@@ -13,7 +13,8 @@ This repository is organised as a monorepo containing packages for the CLI, GUI,
 - `docs/` – documentation
 - `tests/` – unit tests
 
-See [docs/nodes.md](docs/nodes.md) for details on node utilities.
+See [docs/nodes.md](docs/nodes.md) for details on node utilities such as
+`GenLoopInputNode` and the output node classes that save generated assets.
 
 ## Installation
 
