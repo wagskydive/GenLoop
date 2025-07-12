@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import json
 
 
 def test_version_command():
@@ -24,3 +25,27 @@ def test_generate_environments_command():
     result = subprocess.run([sys.executable, '-m', 'genloop_cli', 'generate', 'environments'], capture_output=True, text=True)
     assert result.returncode == 0
     assert 'Generating environments...' in result.stdout
+
+
+def _create_workflow(tmp_path, valid=True):
+    nodes = [{'type': 'GenLoopInputNode'}]
+    if valid:
+        nodes.append({'type': 'GenLoopOutputNode'})
+    data = {'nodes': nodes if valid else []}
+    wf = tmp_path / 'workflow.json'
+    wf.write_text(json.dumps(data))
+    return wf
+
+
+def test_generate_characters_with_workflow(tmp_path):
+    wf = _create_workflow(tmp_path, valid=True)
+    result = subprocess.run([sys.executable, '-m', 'genloop_cli', 'generate', 'characters', '--workflow', str(wf)], capture_output=True, text=True)
+    assert result.returncode == 0
+    assert f'Loaded workflow from {wf}' in result.stdout
+
+
+def test_generate_characters_invalid_workflow(tmp_path):
+    wf = _create_workflow(tmp_path, valid=False)
+    result = subprocess.run([sys.executable, '-m', 'genloop_cli', 'generate', 'characters', '--workflow', str(wf)], capture_output=True, text=True)
+    assert result.returncode != 0
+    assert 'Invalid workflow' in result.stderr
