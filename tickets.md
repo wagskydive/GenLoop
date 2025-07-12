@@ -162,3 +162,11 @@
 - [x] Documented
 - Provide a default environment workflow JSON under `workflows/` containing GenLoopInputNode and GenLoopOutputEnvironmentNode.
 
+
+## Ticket 20 - Character Slot Management
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Implement character slot management UI in the GUI character tab. Users should be able to add and remove slots which are displayed as editable fields.

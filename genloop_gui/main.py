@@ -7,7 +7,9 @@ from PySide6.QtWidgets import (
     QListWidget,
     QVBoxLayout,
     QPushButton,
+    QListWidgetItem,
 )
+from PySide6.QtCore import Qt
 
 
 class ResultsWidget(QWidget):
@@ -32,6 +34,33 @@ class ResultsWidget(QWidget):
                 if name.endswith(".png"):
                     self.list.addItem(name)
 
+
+class CharacterTab(QWidget):
+    """Manage character slots."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.list = QListWidget()
+        self.add_btn = QPushButton("Add Slot")
+        self.remove_btn = QPushButton("Remove Slot")
+        self.add_btn.clicked.connect(self.add_slot)
+        self.remove_btn.clicked.connect(self.remove_slot)
+        layout = QVBoxLayout()
+        layout.addWidget(self.list)
+        layout.addWidget(self.add_btn)
+        layout.addWidget(self.remove_btn)
+        self.setLayout(layout)
+
+    def add_slot(self) -> None:
+        num = self.list.count() + 1
+        item = QListWidgetItem(f"Slot {num}")
+        item.setFlags(item.flags() | Qt.ItemIsEditable)
+        self.list.addItem(item)
+
+    def remove_slot(self) -> None:
+        for item in self.list.selectedItems():
+            self.list.takeItem(self.list.row(item))
+
 class MainWindow(QMainWindow):
     """Main window with tab widget."""
 
@@ -41,7 +70,7 @@ class MainWindow(QMainWindow):
         self.tabs = QTabWidget()
         self.setCentralWidget(self.tabs)
         tab_defs = [
-            ("Characters", QWidget()),
+            ("Characters", CharacterTab()),
             ("Items", QWidget()),
             ("Environments", QWidget()),
             ("Brainstorm", QWidget()),
