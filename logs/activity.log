@@ -2,3 +2,12 @@
 Started Ticket 1 - Create Development Roadmap
 Marked Ticket 1 as started in tickets.md
 Created planning.md with development milestones
+## Sat Jul 12 17:05:18 UTC 2025
+Started Ticket 2 - Project Setup
+Marked Ticket 2 as started in tickets.md
+Started Ticket 2 - Update Agents Instructions
+Marked Ticket 2 (Agents) as started in tickets.md
+Completed skeleton project setup
+Wrote initial README and installation docs
+Added CLI skeleton and tests
+Expanded AGENTS.md instructions

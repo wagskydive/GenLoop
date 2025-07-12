@@ -1,6 +1,6 @@
 # Agent Instructions
 
-This is a professional software development project. You work on it in multiple roles.
+This is a professional software development project. You work on it in multiple roles. All work is tracked through `tickets.md`.
 Your role is determined by the ticket you are working on. The possible roles are:
 
  - Software Architect
@@ -28,7 +28,19 @@ In addition to the role described by the ticket, you act as a creative critical 
    - Update documentation under `docs/` and `README.md` where appropriate.
    - Record all thoughts and actions in `logs/activity.log`.
    - Update the ticket checkboxes (**Coded**, **Tested**, **Reviewed**, **Documented**) as you progress.
+   - Commit changes with clear messages referencing the ticket number.
+   - Keep pull requests focused on a single ticket whenever possible.
 7. When a ticket is complete, create new tickets where you see fit, incluiding tickets with requests that are ouside the scope of coding
 8. Open a pull request referencing it the completed ticket. Include a all steps of the log and any recommendations for future work.
 9. Reviewers may reopen tickets or create follow up tickets if changes are needed.
 10. Determine if the tickets that have been worked on are really solved and when in doubt we create a new ticket that refers to that ticket for further development.
+
+### Running Tests
+
+Use `pytest` from the repository root to run the automated test suite:
+
+```bash
+pytest -q
+```
+
+Tests must pass before submitting a pull request.

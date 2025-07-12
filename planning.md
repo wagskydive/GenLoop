@@ -3,9 +3,9 @@
 GenLoop will be developed in the following milestones derived from the design document. Each milestone contains a checklist of tasks to track progress.
 
 ## Milestone 1: Project Initialization
-- [ ] Monorepo setup
-- [ ] README and folder scaffold
-- [ ] Installation docs
+- [x] Monorepo setup
+- [x] README and folder scaffold
+- [x] Installation docs
 
 ## Milestone 2: CLI Core
 - [ ] `generate characters` command
