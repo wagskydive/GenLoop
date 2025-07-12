@@ -186,3 +186,19 @@
 - [x] Reviewed
 - [x] Documented
 - Implement a `StyleSheet` manager to load and save style tags in a JSON file. Provide GUI integration to display and edit the list.
+
+## Ticket 23 - Slot Memory for Locked Styles
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [ ] Reviewed
+- [x] Documented
+- Implement persistent slot memory storing style tags for locked character slots. Integrate with the GUI Character tab.
+
+## Ticket 24 - Asset Logger
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [ ] Reviewed
+- [x] Documented
+- Create an `AssetLogger` to append metadata to `asset_log.json` whenever an output node saves an asset.

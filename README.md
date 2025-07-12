@@ -42,6 +42,8 @@ python -m genloop_gui
 ```
 
 Within the **Characters** tab you can manage character slots by adding or
-removing editable slot names and run the generation CLI via the **Generate**
-button. See [docs/gui.md](docs/gui.md) for details.
-The **Style Sheet** tab manages style tags stored in ``styles.json``.
+removing editable slot names. Styles can be locked to a slot and are persisted
+in ``slots.json``. Use the **Generate** button to run the CLI. See
+[docs/gui.md](docs/gui.md) for details. The **Style Sheet** tab manages style
+tags stored in ``styles.json``. Output nodes also append metadata entries to
+``asset_log.json``.

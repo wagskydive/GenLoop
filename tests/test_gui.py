@@ -36,8 +36,12 @@ def test_results_widget_lists_pngs(tmp_path, monkeypatch):
     app.quit()
 
 
-def test_character_tab_add_remove(monkeypatch):
+def test_character_tab_add_remove(monkeypatch, tmp_path):
     monkeypatch.setenv("QT_QPA_PLATFORM", "offscreen")
+    import importlib
+    gm = importlib.import_module("genloop_gui.main")
+    from genloop_gui import slot_memory
+    monkeypatch.setattr(gm, "SlotMemory", lambda: slot_memory.SlotMemory(path=str(tmp_path/"slots.json")))
     app = QApplication.instance() or QApplication([])
     tab = CharacterTab()
     tab.add_slot()
@@ -87,3 +91,35 @@ def test_style_sheet_load_save(tmp_path):
     sheet.styles = []
     sheet.load()
     assert sheet.styles == ["anime"]
+
+def test_slot_memory_load_save(tmp_path):
+    from genloop_gui.slot_memory import SlotMemory
+
+    path = tmp_path / "slots.json"
+    mem = SlotMemory(str(path))
+    mem.lock_style("hero", "anime")
+    mem.save()
+    mem.slots = {}
+    mem.load()
+    assert mem.slots == {"hero": "anime"}
+
+
+def test_character_tab_slot_memory(monkeypatch, tmp_path):
+    monkeypatch.setenv("QT_QPA_PLATFORM", "offscreen")
+    from genloop_gui import slot_memory
+    import importlib
+    gm = importlib.import_module("genloop_gui.main")
+    def _factory():
+        return slot_memory.SlotMemory(str(tmp_path / "slots.json"))
+    monkeypatch.setattr(gm, "SlotMemory", lambda: _factory())
+    monkeypatch.setattr(gm.QInputDialog, "getText", lambda *a, **kw: ("anime", True))
+    app = QApplication.instance() or QApplication([])
+    tab = CharacterTab()
+    tab.add_slot()
+    tab.list.setCurrentRow(0)
+    tab.lock_style()
+    tab.close()
+    app.quit()
+    mem = slot_memory.SlotMemory(str(tmp_path / "slots.json"))
+    mem.load()
+    assert mem.slots == {"Slot 1": "anime"}

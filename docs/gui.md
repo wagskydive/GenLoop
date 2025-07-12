@@ -17,11 +17,12 @@ The window exposes six tabs:
 - **Style Sheet**
 - **Results**
 
-The **Characters** tab supports basic character slot management. Use the
-"Add Slot" button to create editable slot names and the "Remove Slot" button to
-delete selected slots. It also features a **Generate** button that runs the CLI
-character generation command and shows the output in a text box for progress
-feedback.
+The **Characters** tab supports character slot management with optional style
+locking. Use **Add Slot** to create editable slot names and **Remove Slot** to
+delete them. **Lock Style** assigns a style tag to the selected slot and the
+mapping is saved in ``slots.json``. **Unlock Style** removes the association.
+The **Generate** button runs the CLI character generation command and shows the
+output in a text box for progress feedback.
 
 The **Style Sheet** tab lets you manage a list of style tags stored in
 ``styles.json``. Add or remove styles and they will be saved automatically when

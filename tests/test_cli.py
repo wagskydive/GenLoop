@@ -140,12 +140,17 @@ def test_genloop_input_node_prepare():
     assert data['formatted_prompt'] == 'cute hello'
     assert data['metadata']['asset_type'] == 'char'
 
-def test_genloop_output_node_save(tmp_path):
+def test_genloop_output_node_save(tmp_path, monkeypatch):
     from genloop_nodes import GenLoopOutputCharacterNode
+    from genloop_nodes import AssetLogger
+    monkeypatch.chdir(tmp_path)
     node = GenLoopOutputCharacterNode(output_dir=tmp_path)
-    path = node.save(b'data', {'foo': 'bar'}, name='test')
-    assert (tmp_path / 'test.png').exists()
-    assert (tmp_path / 'test.png.json').exists()
+    path = node.save(b'data', {"foo": "bar"}, name="test")
+    assert (tmp_path / "test.png").exists()
+    assert (tmp_path / "test.png.json").exists()
+    log = AssetLogger()
+    log.load()
+    assert log.entries and log.entries[-1]["path"].endswith("test.png")
 
 
 def test_default_character_workflow_valid():
