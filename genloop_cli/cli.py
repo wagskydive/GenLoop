@@ -8,6 +8,7 @@ from .workflow import (
     apply_overrides,
     run_comfyui,
 )
+from .packaging import run_pyinstaller, bundle_workflows
 
 @click.group()
 def cli():
@@ -75,6 +76,21 @@ def environments(workflow, override, debug):
             click.echo(json.dumps(data, indent=2))
         run_comfyui(["comfyui", "--workflow", workflow])
     click.echo("Generating environments...")
+
+
+@cli.command()
+@click.option("--target", type=click.Choice(["cli", "gui"]), default="cli")
+@click.option("--dist", type=click.Path(), default="dist")
+def package(target: str, dist: str) -> None:
+    """Package the selected application using PyInstaller."""
+    if target == "cli":
+        entry = "genloop_cli/__main__.py"
+        name = "genloop-cli"
+    else:
+        entry = "genloop_gui/main.py"
+        name = "genloop-gui"
+    run_pyinstaller(entry, name, dist)
+    bundle_workflows(dist)
 
 if __name__ == "__main__":
     cli()

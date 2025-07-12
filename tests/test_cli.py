@@ -175,3 +175,29 @@ def test_default_environment_workflow_valid():
     from genloop_cli.workflow import load_workflow, validate_workflow
     data = load_workflow(str(wf_path))
     validate_workflow(data)
+
+def test_package_cli_copies_workflows(tmp_path):
+    env = os.environ.copy()
+    env['GENLOOP_PYINSTALLER_CMD'] = f"{sys.executable} -c 'print(\"build\")'"
+    result = subprocess.run([
+        sys.executable,
+        '-m', 'genloop_cli', 'package',
+        '--target', 'cli',
+        '--dist', str(tmp_path)
+    ], capture_output=True, text=True, env=env)
+    assert result.returncode == 0
+    assert (tmp_path / 'workflows' / 'character.json').exists()
+    assert 'Running:' in result.stdout
+
+
+def test_package_gui(monkeypatch, tmp_path):
+    env = os.environ.copy()
+    env['GENLOOP_PYINSTALLER_CMD'] = f"{sys.executable} -c 'print(\"build\")'"
+    result = subprocess.run([
+        sys.executable,
+        '-m', 'genloop_cli', 'package',
+        '--target', 'gui',
+        '--dist', str(tmp_path)
+    ], capture_output=True, text=True, env=env)
+    assert result.returncode == 0
+    assert (tmp_path / 'workflows').exists()
