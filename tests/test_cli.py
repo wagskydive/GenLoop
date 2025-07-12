@@ -83,3 +83,32 @@ def test_generate_characters_invalid_override(tmp_path):
     ], capture_output=True, text=True)
     assert result.returncode != 0
     assert 'Invalid override' in result.stderr
+
+
+def test_generate_characters_debug(tmp_path):
+    wf = _create_workflow(tmp_path, valid=True)
+    result = subprocess.run([
+        sys.executable,
+        '-m', 'genloop_cli',
+        'generate', 'characters',
+        '--workflow', str(wf),
+        '--debug',
+    ], capture_output=True, text=True)
+    assert result.returncode == 0
+    assert 'GenLoopInputNode' in result.stdout
+    assert 'Generating characters...' in result.stdout
+
+
+def test_generate_characters_runs_comfyui(tmp_path):
+    wf = _create_workflow(tmp_path, valid=True)
+    result = subprocess.run([
+        sys.executable,
+        '-m',
+        'genloop_cli',
+        'generate',
+        'characters',
+        '--workflow',
+        str(wf),
+    ], capture_output=True, text=True)
+    assert result.returncode == 0
+    assert 'Would run: comfyui --workflow' in result.stdout

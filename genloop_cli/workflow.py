@@ -1,5 +1,12 @@
 import json
 import click
+from typing import Sequence
+
+
+def run_comfyui(cmd: Sequence[str]) -> None:
+    """Placeholder to invoke ComfyUI."""
+    quoted = ' '.join(cmd)
+    click.echo(f"Would run: {quoted}")
 
 
 def load_workflow(path: str) -> dict:
