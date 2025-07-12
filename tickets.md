@@ -31,3 +31,19 @@
 - [ ] Reviewed
 - [x] Documented
 - Implement the `generate characters` command in the CLI. For now it should simply output a message indicating that character generation has been triggered.
+
+## Ticket 4 - Generate Items Command
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [ ] Reviewed
+- [x] Documented
+- Implement the `generate items` command in the CLI. It should output a message indicating that item generation has been triggered.
+
+## Ticket 5 - Generate Environments Command
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [ ] Reviewed
+- [x] Documented
+- Implement the `generate environments` command in the CLI. It should output a message indicating that environment generation has been triggered.

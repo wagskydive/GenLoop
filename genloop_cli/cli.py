@@ -22,5 +22,17 @@ def characters():
     """Generate character assets."""
     click.echo("Generating characters...")
 
+
+@generate.command()
+def items():
+    """Generate item assets."""
+    click.echo("Generating items...")
+
+
+@generate.command()
+def environments():
+    """Generate environment assets."""
+    click.echo("Generating environments...")
+
 if __name__ == "__main__":
     cli()
