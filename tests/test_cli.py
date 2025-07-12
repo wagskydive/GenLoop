@@ -1,4 +1,5 @@
 import subprocess
+from pathlib import Path
 import sys
 import os
 import json
@@ -145,3 +146,27 @@ def test_genloop_output_node_save(tmp_path):
     path = node.save(b'data', {'foo': 'bar'}, name='test')
     assert (tmp_path / 'test.png').exists()
     assert (tmp_path / 'test.png.json').exists()
+
+
+def test_default_character_workflow_valid():
+    wf_path = Path('workflows/character.json')
+    assert wf_path.exists()
+    from genloop_cli.workflow import load_workflow, validate_workflow
+    data = load_workflow(str(wf_path))
+    validate_workflow(data)
+
+
+def test_default_item_workflow_valid():
+    wf_path = Path('workflows/item.json')
+    assert wf_path.exists()
+    from genloop_cli.workflow import load_workflow, validate_workflow
+    data = load_workflow(str(wf_path))
+    validate_workflow(data)
+
+
+def test_default_environment_workflow_valid():
+    wf_path = Path('workflows/environment.json')
+    assert wf_path.exists()
+    from genloop_cli.workflow import load_workflow, validate_workflow
+    data = load_workflow(str(wf_path))
+    validate_workflow(data)

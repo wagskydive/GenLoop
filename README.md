@@ -7,9 +7,9 @@ This repository is organised as a monorepo containing packages for the CLI, GUI,
 ## Repository Structure
 
 - `genloop_cli/` – command line interface package
-- `genloop_gui/` – optional GUI package
+- `genloop_gui/` – optional GUI package with tabs for Characters, Items, Environments, Brainstorm, Style Sheet and a Results view listing generated files
 - `genloop_nodes/` – custom ComfyUI nodes
-- `workflows/` – default workflow templates
+- `workflows/` – default workflow templates (see [docs/workflows.md](docs/workflows.md))
 - `docs/` – documentation
 - `tests/` – unit tests
 

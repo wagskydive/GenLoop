@@ -25,14 +25,14 @@ GenLoop will be developed in the following milestones derived from the design do
 
 ## Milestone 4: GUI Application
 - [x] Tabs for Characters, Items, Environments, Brainstorm and Style Sheet
-- [ ] Results view
+- [x] Results view
 - [ ] Character slot management
 - [ ] GUI to CLI bridge with progress feedback
 
 ## Milestone 5: Workflow Templates
-- [ ] Default character workflow
-- [ ] Default item workflow
-- [ ] Default environment workflow
+- [x] Default character workflow
+- [x] Default item workflow
+- [x] Default environment workflow
 - [ ] Include GenLoop nodes in templates
 - [ ] Publish under `/workflows`
 

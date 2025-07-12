@@ -17,4 +17,8 @@ The initial version exposes six tabs:
 - **Style Sheet**
 - **Results**
 
+The **Results** tab shows a list of generated image files from the
+``outputs`` directory. Use the refresh button to reload the list after
+running a generation command.
+
 Future versions will connect the GUI to the CLI to launch generation workflows and display progress.

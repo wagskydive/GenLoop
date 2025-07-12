@@ -100,3 +100,31 @@ Wrote unit test for MainWindow tabs
 Marked Ticket 15 coded and tested in tickets.md
 Marked planning milestone for GUI tabs as done
 Marked Ticket 15 documented and planning updated
+## $(date -u)
+Started Ticket 16 - GUI Results View
+Marked Ticket 16 as started in tickets.md
+Implemented ResultsWidget and updated GUI docs
+Added tests for results view
+Updated README and planning
+Marked Ticket 16 coded, tested, documented
+## $(date -u)
+Started Ticket 17 - Default Character Workflow
+Marked Ticket 17 as started in tickets.md
+Created workflows/character.json and documentation
+Added CLI link to workflow docs and README entry
+Wrote tests validating the default workflow
+Marked Ticket 17 coded, tested, documented
+## $(date -u)
+Started Ticket 18 - Default Item Workflow
+Marked Ticket 18 as started in tickets.md
+Created workflows/item.json and updated workflow docs
+Added tests validating item workflow
+Updated planning and tickets
+Marked Ticket 18 coded, tested, documented
+## $(date -u)
+Started Ticket 19 - Default Environment Workflow
+Marked Ticket 19 as started in tickets.md
+Created workflows/environment.json and updated docs
+Added tests for environment workflow
+Updated planning and tickets
+Marked Ticket 19 coded, tested, documented
