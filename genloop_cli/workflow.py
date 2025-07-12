@@ -1,12 +1,47 @@
 import json
 import click
 from typing import Sequence
+import os
+import subprocess
 
 
 def run_comfyui(cmd: Sequence[str]) -> None:
-    """Placeholder to invoke ComfyUI."""
-    quoted = ' '.join(cmd)
-    click.echo(f"Would run: {quoted}")
+    """Run ComfyUI and stream its output.
+
+    If the ``GENLOOP_COMFYUI_CMD`` environment variable is set, it will be
+    executed instead of ``cmd``. This allows tests or users to supply a custom
+    command.
+    """
+    env_cmd = os.environ.get("GENLOOP_COMFYUI_CMD")
+    if env_cmd:
+        click.echo(f"Running: {env_cmd}")
+        process = subprocess.Popen(
+            env_cmd,
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+        )
+    else:
+        click.echo(f"Running: {' '.join(cmd)}")
+        try:
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+            )
+        except FileNotFoundError as e:
+            raise click.ClickException(f"ComfyUI not found: {cmd[0]}") from e
+
+    assert process.stdout is not None
+    for line in process.stdout:
+        click.echo(line.rstrip())
+    process.wait()
+    if process.returncode != 0:
+        raise click.ClickException(
+            f"ComfyUI exited with code {process.returncode}"
+        )
 
 
 def load_workflow(path: str) -> dict:

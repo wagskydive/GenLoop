@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import os
 import json
 
 
@@ -39,7 +40,9 @@ def _create_workflow(tmp_path, valid=True):
 
 def test_generate_characters_with_workflow(tmp_path):
     wf = _create_workflow(tmp_path, valid=True)
-    result = subprocess.run([sys.executable, '-m', 'genloop_cli', 'generate', 'characters', '--workflow', str(wf)], capture_output=True, text=True)
+    env = os.environ.copy()
+    env['GENLOOP_COMFYUI_CMD'] = f"{sys.executable} -c 'print(\"run\")'"
+    result = subprocess.run([sys.executable, '-m', 'genloop_cli', 'generate', 'characters', '--workflow', str(wf)], capture_output=True, text=True, env=env)
     assert result.returncode == 0
     assert f'Loaded workflow from {wf}' in result.stdout
 
@@ -53,6 +56,8 @@ def test_generate_characters_invalid_workflow(tmp_path):
 
 def test_generate_characters_with_override(tmp_path):
     wf = _create_workflow(tmp_path, valid=True)
+    env = os.environ.copy()
+    env['GENLOOP_COMFYUI_CMD'] = f"{sys.executable} -c 'print(\"run\")'"
     result = subprocess.run([
         sys.executable,
         '-m',
@@ -63,7 +68,7 @@ def test_generate_characters_with_override(tmp_path):
         str(wf),
         '--override',
         'foo=bar',
-    ], capture_output=True, text=True)
+    ], capture_output=True, text=True, env=env)
     assert result.returncode == 0
     assert "Applied overrides: {'foo': 'bar'}" in result.stdout
 
@@ -87,13 +92,15 @@ def test_generate_characters_invalid_override(tmp_path):
 
 def test_generate_characters_debug(tmp_path):
     wf = _create_workflow(tmp_path, valid=True)
+    env = os.environ.copy()
+    env['GENLOOP_COMFYUI_CMD'] = f"{sys.executable} -c 'print(\"run\")'"
     result = subprocess.run([
         sys.executable,
         '-m', 'genloop_cli',
         'generate', 'characters',
         '--workflow', str(wf),
         '--debug',
-    ], capture_output=True, text=True)
+    ], capture_output=True, text=True, env=env)
     assert result.returncode == 0
     assert 'GenLoopInputNode' in result.stdout
     assert 'Generating characters...' in result.stdout
@@ -101,6 +108,8 @@ def test_generate_characters_debug(tmp_path):
 
 def test_generate_characters_runs_comfyui(tmp_path):
     wf = _create_workflow(tmp_path, valid=True)
+    env = os.environ.copy()
+    env['GENLOOP_COMFYUI_CMD'] = f"{sys.executable} -c 'print(\"comfy run\")'"
     result = subprocess.run([
         sys.executable,
         '-m',
@@ -109,6 +118,19 @@ def test_generate_characters_runs_comfyui(tmp_path):
         'characters',
         '--workflow',
         str(wf),
-    ], capture_output=True, text=True)
+    ], capture_output=True, text=True, env=env)
     assert result.returncode == 0
-    assert 'Would run: comfyui --workflow' in result.stdout
+    assert 'Running:' in result.stdout
+    assert 'comfy run' in result.stdout
+
+def test_slugify():
+    from genloop_nodes.utils import slugify
+    assert slugify('Hello World!') == 'hello_world'
+    assert slugify('Already_Slug') == 'already_slug'
+
+def test_genloop_input_node_prepare():
+    from genloop_nodes import GenLoopInputNode
+    node = GenLoopInputNode(prompt='hello', style_tag='cute', asset_type='char')
+    data = node.prepare()
+    assert data['formatted_prompt'] == 'cute hello'
+    assert data['metadata']['asset_type'] == 'char'
