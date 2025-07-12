@@ -17,4 +17,8 @@ This repository is organised as a monorepo containing packages for the CLI, GUI,
 
 See [docs/installation.md](docs/installation.md) for setup instructions.
 
-For details on the command line interface, read [docs/cli.md](docs/cli.md).
+For details on the command line interface, read [docs/cli.md](docs/cli.md). You can try the placeholder generation command:
+
+```bash
+python -m genloop_cli generate characters
+```
