@@ -15,7 +15,7 @@ GenLoop will be developed in the following milestones derived from the design do
  - [x] GenLoop node validation
  - [x] CLI argument overrides
 - [ ] Run ComfyUI and watch for output
-- [ ] Debug and override flags
+ - [x] Debug and override flags
 
 ## Milestone 3: Custom Nodes
 - [ ] `GenLoopInputNode` with prompt and metadata handling

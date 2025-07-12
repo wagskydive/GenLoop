@@ -60,7 +60,23 @@
 - [x] Started
 - [x] Coded
 - [x] Tested
-- [ ] Reviewed
+- [x] Reviewed
 - [x] Documented
 - Add `--override key=value` option to generation commands. Parsed overrides should be applied to the loaded workflow data.
+
+## Ticket 8 - CLI Debug Flag
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Add `--debug` option to generation commands to print loaded workflow data and overrides.
+
+## Ticket 9 - ComfyUI Execution Stub
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Implement a placeholder function to invoke ComfyUI using a workflow path. For now it should just print the command that would be run.
 

@@ -25,4 +25,6 @@ python -m genloop_cli generate items [--workflow path/to/workflow.json]
 python -m genloop_cli generate environments [--workflow path/to/workflow.json]
 python -m genloop_cli generate characters --workflow wf.json \
     --override prompt="A hero" --override style=anime
+python -m genloop_cli generate characters --workflow wf.json --debug
 ```
+Supplying a workflow will run ComfyUI (currently just echoed to the console).
