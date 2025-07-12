@@ -24,3 +24,10 @@
 - [ ] Reviewed
 - [x] Documented
 - Review the design document and expand `AGENTS.md` with detailed project guidelines and iterative workflow instructions.
+## Ticket 3 - Generate Characters Command
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [ ] Reviewed
+- [x] Documented
+- Implement the `generate characters` command in the CLI. For now it should simply output a message indicating that character generation has been triggered.

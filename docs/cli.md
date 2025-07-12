@@ -1,9 +1,15 @@
 # CLI Usage
 
-GenLoop ships with a simple command line interface. For now it supports a `version` command that prints the application version.
+GenLoop ships with a simple command line interface. It currently supports a `version` command and a placeholder command for generating character assets.
 
 ```bash
 python -m genloop_cli version
 ```
 
-Future commands will include asset generation functionality as described in `design.md`.
+To trigger character generation:
+
+```bash
+python -m genloop_cli generate characters
+```
+
+Future commands will include full asset generation functionality as described in `design.md`.
