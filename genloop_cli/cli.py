@@ -1,5 +1,7 @@
 import click
 
+from .workflow import load_workflow, validate_workflow
+
 @click.group()
 def cli():
     """GenLoop command line interface."""
@@ -18,20 +20,32 @@ def generate():
 
 
 @generate.command()
-def characters():
+@click.option("--workflow", type=click.Path(), help="Workflow JSON file")
+def characters(workflow):
     """Generate character assets."""
+    if workflow:
+        data = load_workflow(workflow)
+        validate_workflow(data)
     click.echo("Generating characters...")
 
 
 @generate.command()
-def items():
+@click.option("--workflow", type=click.Path(), help="Workflow JSON file")
+def items(workflow):
     """Generate item assets."""
+    if workflow:
+        data = load_workflow(workflow)
+        validate_workflow(data)
     click.echo("Generating items...")
 
 
 @generate.command()
-def environments():
+@click.option("--workflow", type=click.Path(), help="Workflow JSON file")
+def environments(workflow):
     """Generate environment assets."""
+    if workflow:
+        data = load_workflow(workflow)
+        validate_workflow(data)
     click.echo("Generating environments...")
 
 if __name__ == "__main__":

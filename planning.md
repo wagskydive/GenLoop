@@ -9,8 +9,8 @@ GenLoop will be developed in the following milestones derived from the design do
 
 ## Milestone 2: CLI Core
 - [x] `generate characters` command
-- [ ] `generate items` command
-- [ ] `generate environments` command
+- [x] `generate items` command
+- [x] `generate environments` command
 - [ ] Workflow loading from `.json`
 - [ ] GenLoop node validation
 - [ ] CLI argument overrides
