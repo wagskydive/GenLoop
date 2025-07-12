@@ -17,12 +17,16 @@ The window exposes six tabs:
 - **Style Sheet**
 - **Results**
 
-The **Characters** tab now supports basic character slot management. Use the
+The **Characters** tab supports basic character slot management. Use the
 "Add Slot" button to create editable slot names and the "Remove Slot" button to
-delete selected slots.
+delete selected slots. It also features a **Generate** button that runs the CLI
+character generation command and shows the output in a text box for progress
+feedback.
+
+The **Style Sheet** tab lets you manage a list of style tags stored in
+``styles.json``. Add or remove styles and they will be saved automatically when
+closing the GUI.
 
 The **Results** tab shows a list of generated image files from the ``outputs``
 directory. Use the refresh button to reload the list after running a generation
 command.
-
-Future versions will connect the GUI to the CLI to launch generation workflows and display progress.

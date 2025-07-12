@@ -8,8 +8,12 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QPushButton,
     QListWidgetItem,
+    QTextEdit,
 )
 from PySide6.QtCore import Qt
+from .style_sheet import StyleSheetTab
+import subprocess
+import sys
 
 
 class ResultsWidget(QWidget):
@@ -43,12 +47,18 @@ class CharacterTab(QWidget):
         self.list = QListWidget()
         self.add_btn = QPushButton("Add Slot")
         self.remove_btn = QPushButton("Remove Slot")
+        self.generate_btn = QPushButton("Generate")
+        self.output_view = QTextEdit()
+        self.output_view.setReadOnly(True)
         self.add_btn.clicked.connect(self.add_slot)
         self.remove_btn.clicked.connect(self.remove_slot)
+        self.generate_btn.clicked.connect(self.generate)
         layout = QVBoxLayout()
         layout.addWidget(self.list)
         layout.addWidget(self.add_btn)
         layout.addWidget(self.remove_btn)
+        layout.addWidget(self.generate_btn)
+        layout.addWidget(self.output_view)
         self.setLayout(layout)
 
     def add_slot(self) -> None:
@@ -60,6 +70,21 @@ class CharacterTab(QWidget):
     def remove_slot(self) -> None:
         for item in self.list.selectedItems():
             self.list.takeItem(self.list.row(item))
+
+    def generate(self) -> None:
+        """Run the CLI character generation command."""
+        cmd = [sys.executable, "-m", "genloop_cli", "generate", "characters"]
+        process = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+        )
+        assert process.stdout is not None
+        self.output_view.clear()
+        for line in process.stdout:
+            self.output_view.append(line.rstrip())
+        process.wait()
 
 class MainWindow(QMainWindow):
     """Main window with tab widget."""
@@ -74,7 +99,7 @@ class MainWindow(QMainWindow):
             ("Items", QWidget()),
             ("Environments", QWidget()),
             ("Brainstorm", QWidget()),
-            ("Style Sheet", QWidget()),
+            ("Style Sheet", StyleSheetTab()),
             ("Results", ResultsWidget()),
         ]
         for name, widget in tab_defs:

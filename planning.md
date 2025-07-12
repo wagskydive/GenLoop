@@ -26,8 +26,8 @@ GenLoop will be developed in the following milestones derived from the design do
 ## Milestone 4: GUI Application
 - [x] Tabs for Characters, Items, Environments, Brainstorm and Style Sheet
 - [x] Results view
-- [ ] Character slot management
-- [ ] GUI to CLI bridge with progress feedback
+- [x] Character slot management
+- [x] GUI to CLI bridge with progress feedback
 
 ## Milestone 5: Workflow Templates
 - [x] Default character workflow
@@ -37,7 +37,7 @@ GenLoop will be developed in the following milestones derived from the design do
 - [x] Publish under `/workflows`
 
 ## Milestone 6: Asset Metadata and Style Management
-- [ ] Style sheet collection
+- [x] Style sheet collection
 - [ ] Slot memory for locked styles
 - [ ] Asset logs in JSON
 

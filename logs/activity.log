@@ -137,3 +137,11 @@ Exported CharacterTab from package
 Added tests for CharacterTab
 Ran test suite
 Marked Ticket 20 coded, tested, documented
+## Sat Jul 12 19:00:28 UTC 2025
+Started Ticket 21 - GUI to CLI Bridge
+Marked Ticket 21 as started in tickets.md
+Started Ticket 22 - Style Sheet Collection
+Marked Ticket 22 as started in tickets.md
+Implemented GUI CLI bridge and StyleSheet manager
+Added tests and documentation
+Marked Tickets 21 and 22 coded, tested, documented

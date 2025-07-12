@@ -11,6 +11,7 @@ This repository is organised as a monorepo containing packages for the CLI, GUI,
 - `genloop_nodes/` – custom ComfyUI nodes
 - `workflows/` – default workflow templates (see [docs/workflows.md](docs/workflows.md))
 - `docs/` – documentation
+- `docs/style_sheet.md` – information on managing style tags
 - `tests/` – unit tests
 
 See [docs/nodes.md](docs/nodes.md) for details on node utilities such as
@@ -41,4 +42,6 @@ python -m genloop_gui
 ```
 
 Within the **Characters** tab you can manage character slots by adding or
-removing editable slot names. See [docs/gui.md](docs/gui.md) for details.
+removing editable slot names and run the generation CLI via the **Generate**
+button. See [docs/gui.md](docs/gui.md) for details.
+The **Style Sheet** tab manages style tags stored in ``styles.json``.

@@ -170,3 +170,19 @@
 - [x] Reviewed
 - [x] Documented
 - Implement character slot management UI in the GUI character tab. Users should be able to add and remove slots which are displayed as editable fields.
+
+## Ticket 21 - GUI to CLI Bridge
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Connect the GUI with the CLI to trigger character generation from the Characters tab. Show command output in a text area for progress feedback.
+
+## Ticket 22 - Style Sheet Collection
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Implement a `StyleSheet` manager to load and save style tags in a JSON file. Provide GUI integration to display and edit the list.
