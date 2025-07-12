@@ -121,3 +121,12 @@
 - [x] Documented
 - Add basic output node classes capable of saving PNG and JSON metadata using `safe_path`.
 
+
+
+## Ticket 15 - GUI Skeleton
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Implement a basic PySide6 GUI application with tabs for Characters, Items, Environments, Brainstorm, Style Sheet and Results. Provide a module entry point to launch the GUI.

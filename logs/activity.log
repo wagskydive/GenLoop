@@ -90,3 +90,13 @@ Marked Ticket 14 as started in tickets.md
 Implemented output node classes with saving logic
 Updated docs, README and tests
 Marked Ticket 14 coded, tested, documented and reviewed
+## $(date -u)
+Started Ticket 15 - GUI Skeleton
+Marked Ticket 15 as started in tickets.md
+Created GUI documentation and added link in README
+Added PySide6 dependency and basic GUI implementation
+Wrote unit test for MainWindow tabs
+Wrote unit test for MainWindow tabs
+Marked Ticket 15 coded and tested in tickets.md
+Marked planning milestone for GUI tabs as done
+Marked Ticket 15 documented and planning updated
