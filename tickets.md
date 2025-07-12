@@ -191,7 +191,7 @@
 - [x] Started
 - [x] Coded
 - [x] Tested
-- [ ] Reviewed
+- [x] Reviewed
 - [x] Documented
 - Implement persistent slot memory storing style tags for locked character slots. Integrate with the GUI Character tab.
 
@@ -199,6 +199,6 @@
 - [x] Started
 - [x] Coded
 - [x] Tested
-- [ ] Reviewed
+- [x] Reviewed
 - [x] Documented
 - Create an `AssetLogger` to append metadata to `asset_log.json` whenever an output node saves an asset.
