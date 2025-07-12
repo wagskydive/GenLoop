@@ -130,3 +130,35 @@
 - [x] Reviewed
 - [x] Documented
 - Implement a basic PySide6 GUI application with tabs for Characters, Items, Environments, Brainstorm, Style Sheet and Results. Provide a module entry point to launch the GUI.
+## Ticket 16 - GUI Results View
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Implement a results view in the GUI that lists generated files from the output directory.
+
+## Ticket 17 - Default Character Workflow
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Provide a default character workflow JSON under `workflows/` containing GenLoopInputNode and GenLoopOutputCharacterNode.
+
+## Ticket 18 - Default Item Workflow
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Provide a default item workflow JSON under `workflows/` containing GenLoopInputNode and GenLoopOutputItemNode.
+
+## Ticket 19 - Default Environment Workflow
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Provide a default environment workflow JSON under `workflows/` containing GenLoopInputNode and GenLoopOutputEnvironmentNode.
+

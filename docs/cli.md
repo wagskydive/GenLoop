@@ -44,3 +44,4 @@ For troubleshooting you can pass `--debug` to print the loaded workflow and any 
 ```bash
 python -m genloop_cli generate characters --workflow wf.json --debug
 ```
+See [docs/workflows.md](workflows.md) for included templates.

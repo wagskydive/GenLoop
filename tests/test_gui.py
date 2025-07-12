@@ -1,6 +1,7 @@
 import os
 import sys
 from genloop_gui import MainWindow
+from genloop_gui.main import ResultsWidget
 from PySide6.QtWidgets import QApplication
 
 
@@ -19,4 +20,16 @@ def test_main_window_tabs(monkeypatch):
     ]
     assert tabs == expected
     win.close()
+    app.quit()
+
+
+def test_results_widget_lists_pngs(tmp_path, monkeypatch):
+    monkeypatch.setenv("QT_QPA_PLATFORM", "offscreen")
+    (tmp_path / "a.png").write_bytes(b"1")
+    (tmp_path / "b.png").write_bytes(b"2")
+    app = QApplication.instance() or QApplication([])
+    w = ResultsWidget(output_dir=tmp_path)
+    items = [w.list.item(i).text() for i in range(w.list.count())]
+    assert items == ["a.png", "b.png"]
+    w.close()
     app.quit()

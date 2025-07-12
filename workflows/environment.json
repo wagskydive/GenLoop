@@ -1,0 +1,6 @@
+{
+  "nodes": [
+    {"id": 1, "type": "GenLoopInputNode"},
+    {"id": 2, "type": "GenLoopOutputEnvironmentNode"}
+  ]
+}
