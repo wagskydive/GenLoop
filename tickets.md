@@ -1,7 +1,7 @@
 # Tickets
 
 ## Ticket 1 - Create Development Roadmap
-- [ ] Started
+- [x] Started
 - [ ] Coded
 - [ ] Tested
 - [ ] Reviewed
