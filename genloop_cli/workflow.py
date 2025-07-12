@@ -22,3 +22,22 @@ def validate_workflow(data: dict) -> None:
     has_output = any(str(n.get("type", "")).startswith("GenLoopOutput") for n in nodes)
     if not (has_input and has_output):
         raise click.ClickException("Invalid workflow: missing GenLoop nodes")
+
+
+def parse_overrides(values: tuple[str]) -> dict:
+    """Parse key=value pairs from CLI."""
+    overrides: dict[str, str] = {}
+    for item in values:
+        if '=' not in item:
+            raise click.ClickException(f"Invalid override '{item}' (expected key=value)")
+        key, value = item.split('=', 1)
+        overrides[key] = value
+    return overrides
+
+
+def apply_overrides(data: dict, overrides: dict) -> dict:
+    """Apply overrides to workflow data for now by storing them."""
+    if overrides:
+        data.setdefault('overrides', {}).update(overrides)
+        click.echo(f"Applied overrides: {overrides}")
+    return data

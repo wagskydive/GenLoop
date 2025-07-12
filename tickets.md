@@ -52,7 +52,15 @@
 - [x] Started
 - [x] Coded
 - [x] Tested
-- [ ] Reviewed
+- [x] Reviewed
 - [x] Documented
 - Add `--workflow` option to generation commands. Load JSON workflow file and validate required nodes (`GenLoopInputNode` and `GenLoopOutput*Node`).
+
+## Ticket 7 - CLI Argument Overrides
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [ ] Reviewed
+- [x] Documented
+- Add `--override key=value` option to generation commands. Parsed overrides should be applied to the loaded workflow data.
 

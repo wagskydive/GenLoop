@@ -1,6 +1,11 @@
 import click
 
-from .workflow import load_workflow, validate_workflow
+from .workflow import (
+    load_workflow,
+    validate_workflow,
+    parse_overrides,
+    apply_overrides,
+)
 
 @click.group()
 def cli():
@@ -21,30 +26,39 @@ def generate():
 
 @generate.command()
 @click.option("--workflow", type=click.Path(), help="Workflow JSON file")
-def characters(workflow):
+@click.option("--override", multiple=True, help="Override node value key=value")
+def characters(workflow, override):
     """Generate character assets."""
     if workflow:
         data = load_workflow(workflow)
+        overrides = parse_overrides(override)
+        data = apply_overrides(data, overrides)
         validate_workflow(data)
     click.echo("Generating characters...")
 
 
 @generate.command()
 @click.option("--workflow", type=click.Path(), help="Workflow JSON file")
-def items(workflow):
+@click.option("--override", multiple=True, help="Override node value key=value")
+def items(workflow, override):
     """Generate item assets."""
     if workflow:
         data = load_workflow(workflow)
+        overrides = parse_overrides(override)
+        data = apply_overrides(data, overrides)
         validate_workflow(data)
     click.echo("Generating items...")
 
 
 @generate.command()
 @click.option("--workflow", type=click.Path(), help="Workflow JSON file")
-def environments(workflow):
+@click.option("--override", multiple=True, help="Override node value key=value")
+def environments(workflow, override):
     """Generate environment assets."""
     if workflow:
         data = load_workflow(workflow)
+        overrides = parse_overrides(override)
+        data = apply_overrides(data, overrides)
         validate_workflow(data)
     click.echo("Generating environments...")
 
