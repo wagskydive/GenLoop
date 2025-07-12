@@ -4,6 +4,7 @@ import os
 from dataclasses import dataclass, field
 
 from .utils import safe_path
+from .asset_log import AssetLogger
 
 __all__ = [
     "GenLoopOutputNode",
@@ -31,6 +32,7 @@ class GenLoopOutputNode:
             f.write(image)
         with open(path + ".json", "w", encoding="utf-8") as f:
             json.dump(metadata, f)
+        AssetLogger().log({"path": path, "metadata": metadata})
         return path
 
 

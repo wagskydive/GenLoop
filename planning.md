@@ -38,8 +38,8 @@ GenLoop will be developed in the following milestones derived from the design do
 
 ## Milestone 6: Asset Metadata and Style Management
 - [x] Style sheet collection
-- [ ] Slot memory for locked styles
-- [ ] Asset logs in JSON
+- [x] Slot memory for locked styles
+- [x] Asset logs in JSON
 
 ## Milestone 7: Packaging
 - [ ] PyInstaller build for CLI

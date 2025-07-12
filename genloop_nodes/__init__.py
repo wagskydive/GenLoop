@@ -7,6 +7,7 @@ from .output_nodes import (
     GenLoopOutputItemNode,
     GenLoopOutputEnvironmentNode,
 )
+from .asset_log import AssetLogger
 __all__ = [
     "slugify",
     "safe_path",
@@ -14,4 +15,5 @@ __all__ = [
     "GenLoopOutputCharacterNode",
     "GenLoopOutputItemNode",
     "GenLoopOutputEnvironmentNode",
+    "AssetLogger",
 ]

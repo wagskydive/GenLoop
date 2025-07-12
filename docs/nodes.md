@@ -39,3 +39,11 @@ from genloop_nodes import GenLoopOutputCharacterNode
 node = GenLoopOutputCharacterNode(output_dir="out")
 node.save(b"img", {"prompt": "hi"}, name="hero")
 ```
+
+Each save is also recorded in ``asset_log.json`` via the ``AssetLogger`` class:
+
+```python
+from genloop_nodes import AssetLogger
+log = AssetLogger()
+log.load()  # returns list of previous entries
+```
