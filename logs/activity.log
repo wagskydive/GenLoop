@@ -79,3 +79,14 @@ Marked Ticket 12 as started in tickets.md
 Implemented GenLoopInputNode skeleton with prepare method
 Added tests and documentation for GenLoopInputNode
 Marked Ticket 12 coded, tested, documented
+## $(date -u)
+Started Ticket 13 - Safe Path Utility
+Marked Ticket 13 as started in tickets.md
+Implemented safe_path utility with docs and tests
+Marked Ticket 13 coded, tested, documented and reviewed
+## $(date -u)
+Started Ticket 14 - GenLoopOutput Nodes
+Marked Ticket 14 as started in tickets.md
+Implemented output node classes with saving logic
+Updated docs, README and tests
+Marked Ticket 14 coded, tested, documented and reviewed

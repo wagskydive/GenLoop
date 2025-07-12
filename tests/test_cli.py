@@ -128,9 +128,20 @@ def test_slugify():
     assert slugify('Hello World!') == 'hello_world'
     assert slugify('Already_Slug') == 'already_slug'
 
+def test_safe_path():
+    from genloop_nodes.utils import safe_path
+    assert safe_path('path/to/My File.txt') == 'path/to/My_File.txt'
+
 def test_genloop_input_node_prepare():
     from genloop_nodes import GenLoopInputNode
     node = GenLoopInputNode(prompt='hello', style_tag='cute', asset_type='char')
     data = node.prepare()
     assert data['formatted_prompt'] == 'cute hello'
     assert data['metadata']['asset_type'] == 'char'
+
+def test_genloop_output_node_save(tmp_path):
+    from genloop_nodes import GenLoopOutputCharacterNode
+    node = GenLoopOutputCharacterNode(output_dir=tmp_path)
+    path = node.save(b'data', {'foo': 'bar'}, name='test')
+    assert (tmp_path / 'test.png').exists()
+    assert (tmp_path / 'test.png.json').exists()

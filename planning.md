@@ -18,10 +18,10 @@ GenLoop will be developed in the following milestones derived from the design do
  - [x] Debug and override flags
 
 ## Milestone 3: Custom Nodes
-- [ ] `GenLoopInputNode` with prompt and metadata handling
-- [ ] Output nodes for characters, items and environments
-- [ ] PNG saving and metadata logging
-- [ ] Utility functions (slugifier, safe paths)
+- [x] `GenLoopInputNode` with prompt and metadata handling
+- [x] Output nodes for characters, items and environments
+- [x] PNG saving and metadata logging
+- [x] Utility functions (slugifier, safe paths)
 
 ## Milestone 4: GUI Application
 - [ ] Tabs for Characters, Items, Environments, Brainstorm and Style Sheet

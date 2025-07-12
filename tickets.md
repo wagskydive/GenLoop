@@ -105,3 +105,19 @@
 - [x] Documented
 - Implement a minimal `GenLoopInputNode` with prompt formatting and metadata output.
 
+## Ticket 13 - Safe Path Utility
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Implement a `safe_path` helper in `genloop_nodes.utils` to sanitise file paths.
+
+## Ticket 14 - GenLoopOutput Nodes
+- [x] Started
+- [x] Coded
+- [x] Tested
+- [x] Reviewed
+- [x] Documented
+- Add basic output node classes capable of saving PNG and JSON metadata using `safe_path`.
+
